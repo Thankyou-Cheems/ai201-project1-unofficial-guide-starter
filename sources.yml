@@ -1,0 +1,210 @@
+version: 1
+domain: "Columbia University graduate dining & meal plans"
+last_updated: "2026-06-10"
+
+# 顶层默认设置，可以在每个 source 中覆盖
+defaults:
+  language: "en"
+  campus: "Morningside Heights"
+  school: "Columbia University"
+  owner: "Columbia Dining"
+
+sources:
+  # S1: Columbia Dining 官网总入口
+  - id: "S1_dining_main"
+    label: "Columbia Dining main site"
+    url: "https://dining.columbia.edu"
+    type: "official"              # official / wiki / forum / guide / other
+    doc_type: "locations_overview" # locations_overview / policy / plans / news
+    audience: "mixed"             # grad / undergrad / mixed
+    priority: 1                   # 1 = highest priority
+    description: >
+      Main Columbia Dining site listing dining halls and retail locations,
+      and linking to plan, policy, and news subpages.
+    notes: >
+      Use as the canonical list of locations and as the root for crawling
+      individual location pages.
+
+  # S2: Dining Plan Policy（总政策条款）
+  - id: "S2_dining_plan_policy"
+    label: "Dining Plan Policy"
+    url: "https://dining.columbia.edu/content/dining-plan-policy"
+    type: "official"
+    doc_type: "policy"
+    audience: "mixed"
+    priority: 1
+    description: >
+      High-level dining plan policy, including when plans start and end each term,
+      who is required to have a plan, and general rules.
+    notes: >
+      Important for questions about term start/end dates, change rules, and
+      eligibility. Use together with term-specific news posts.
+
+  # S3: Spring 2026 Dining Plan Change Period 公告
+  - id: "S3_spring2026_change_period"
+    label: "Spring 2026 Dining Plan Change Period"
+    url: "https://dining.columbia.edu/news/spring-2026-dining-plan-change-period-january-13-27"
+    type: "official"
+    doc_type: "news"
+    audience: "mixed"
+    priority: 2
+    description: >
+      News post announcing the Spring 2026 dining plan change period
+      (January 13–27) and reminding students they can adjust their plans.
+    notes: >
+      Use to answer questions like "when can I change my plan?" and as an example
+      of how Columbia announces future change windows.
+
+  # S4: Columbia Engineering – Dining（工程生视角的官方介绍）
+  - id: "S4_engineering_dining"
+    label: "Engineering: Dining"
+    url: "https://www.engineering.columbia.edu/student-life/dining"
+    type: "official"
+    doc_type: "locations_overview"
+    audience: "mixed"
+    priority: 2
+    description: >
+      Overview of dining options targeted at Columbia Engineering students,
+      including locations near Mudd (e.g., Blue Java in Mudd, Chef Mike's).
+    notes: >
+      Especially relevant for questions like "what's near Mudd?" or
+      "where can SEAS students grab food between classes?".
+
+  # S5: First-Year Dining Plans（本科新生对比用）
+  - id: "S5_firstyear_plans"
+    label: "First-Year Dining Plans"
+    url: "https://dining.columbia.edu/content/first-year-dining-plans"
+    type: "official"
+    doc_type: "plans"
+    audience: "undergrad"
+    priority: 3
+    description: >
+      Required dining plans for first-year undergraduates, including plan names,
+      meals per week/term, Dining Dollars, and per-term costs.
+    notes: >
+      Not directly a grad plan source, but useful as a comparison point
+      and to understand the overall plan design.
+
+  # S6: Graduate Student Dining Plans Main Page
+  - id: "S6_grad_plans"
+    label: "Graduate Student Dining Plans"
+    url: "https://dining.columbia.edu/graduate-plans"
+    type: "official"              # official / wiki / forum / guide / other
+    doc_type: "plans" # locations_overview / policy / plans / news
+    audience: "grad"             # grad / undergrad / mixed
+    priority: 1                   # 1 = highest priority
+    description: >
+      Primary source for graduate dining plans (AY 2025–26). Includes plan options:
+      Grad Plan 1 (25 meals + $100 Flex for $425/term), Grad Plan 2 (50 meals + $150 Flex for $750/term),
+      and Grad Plan 3 (75 meals + $200 Flex for $1,025/term). Extra meal packs cost $110 for 10 meals.
+    notes: >
+      This page details what grad plans exist, their pricing, and location limits.
+      Grad plans are restricted to select retail and dining locations (Chef Mike’s, Chef Don’s, Fac Shack, Faculty House, Grace Dodge, Johnny’s Food Truck, Barnard Dining) and exclude traditional halls (John Jay, Ferris, JJ's).
+
+  # S7: WikiCU – Dining Services（地点 + 时间 Wiki）
+  - id: "S7_wikicu_dining_services"
+    label: "WikiCU: Dining Services"
+    url: "https://www.wikicu.com/Dining_Services"
+    type: "wiki"
+    doc_type: "locations_overview"
+    audience: "mixed"
+    priority: 2
+    description: >
+      Student-maintained list of Columbia dining locations with typical hours,
+      plus notes on Dining Services office and contact info.
+    notes: >
+      Use for detailed hours and informal descriptors per location.
+      Treat as semi-official and cross-check with Columbia Dining when possible.
+
+  # S8: WikiCU – Meal plan（历史结构说明）
+  - id: "S8_wikicu_meal_plan"
+    label: "WikiCU: Meal plan"
+    url: "https://www.wikicu.com/Meal_plan"
+    type: "wiki"
+    doc_type: "plans"
+    audience: "undergrad"
+    priority: 3
+    description: >
+      Historical description of Columbia meal plans, including which halls
+      are all-you-can-eat and past plan structures (Plan 1, Plan 2, etc.).
+    notes: >
+      Use primarily for background and historical comparisons; current details
+      must be confirmed against official Columbia Dining pages.
+
+  # S9: 第三方 2025–26 Meal Plan 指南
+  - id: "S9_prked_meal_plan_guide_2025"
+    label: "Prked 2025–26 Meal Plan Guide"
+    url: "https://prked.com/post/columbia-university-meal-plan-guide-a-deep-dive-for-2025-26"
+    type: "guide"
+    doc_type: "plans"
+    audience: "mixed"
+    priority: 3
+    description: >
+      Third-party deep-dive into Columbia meal plans for the 2025–26 academic year,
+      including comparison tables and suggested use cases for different plans.
+    notes: >
+      Use for high-level plan structure and "designed for" descriptions.
+      Always cross-check specific numbers against official Columbia Dining data.
+
+  # S10: Reddit – Columbia dining’s new policy regarding graduate student
+  - id: "S10_reddit_grad_policy"
+    label: "Reddit: Grad dining policy change"
+    url: "https://www.reddit.com/r/columbia/comments/1mylwoa/columbia_dinings_new_policy_regarding_graduate/"
+    type: "forum"
+    doc_type: "plans"
+    audience: "grad"
+    priority: 1
+    description: >
+      Student discussion summarizing the new graduate dining policy, including
+      reduced meal counts per term and restrictions to select locations instead
+      of traditional residential dining halls.
+    notes: >
+      Valuable as a student-facing summary of official changes; many comments
+      quote or paraphrase Columbia Dining language. Treat as semi-structured
+      "unofficial interpretation" and cross-check against official pages.
+
+  # S11: Reddit – Running out of meals / extra packs
+  - id: "S11_reddit_extra_meals"
+    label: "Reddit: Buying extra meals"
+    url: "https://www.reddit.com/r/columbia/comments/197mdia/can_you_add_more_meals_to_the_meal_plan_if_i_run/"
+    type: "forum"
+    doc_type: "plans"
+    audience: "mixed"
+    priority: 2
+    description: >
+      Q&A about what happens when a student runs out of meals and whether they
+      can buy additional meal packs; includes references to contacting dining
+      services and emergency meal tickets for some schools.
+    notes: >
+      Use to answer questions about topping up a meal plan or emergency support.
+      Treat as anecdotal; verify policy details where possible.
+
+  # S12: Reddit – Dining halls experience /偏好讨论
+  - id: "S12_reddit_dining_halls"
+    label: "Reddit: Dining halls experiences"
+    url: "https://www.reddit.com/r/columbia/comments/1tct9ad/dining_halls/"
+    type: "forum"
+    doc_type: "locations_experience"
+    audience: "mixed"
+    priority: 3
+    description: >
+      Student discussion about different dining halls on campus, including
+      perceived quality, crowding, and which locations are considered the best.
+    notes: >
+      Use as qualitative context for questions about taste, atmosphere,
+      and peak times. Not authoritative for hours or policies.
+
+  # S13: Student Dining Plans Index Page
+  - id: "S13_student_dining_plans_index"
+    label: "Student Dining Plans Index"
+    url: "https://dining.columbia.edu/student-dining-plans"
+    type: "official"
+    doc_type: "plans"
+    audience: "mixed"
+    priority: 2
+    description: >
+      Index page for all student dining plans, linking out to detailed plan
+      descriptions and listing standard Columbia dining and retail locations.
+    notes: >
+      Use as an additional entry point for plan-specific pages and as a
+      cross-check for the list of dining halls vs. retail locations.
