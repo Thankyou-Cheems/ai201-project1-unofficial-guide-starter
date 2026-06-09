@@ -1,0 +1,15 @@
+{
+  "doc_id": "S13_student_dining_plans_index",
+  "source_id": "S13_student_dining_plans_index",
+  "url": "https://dining.columbia.edu/student-dining-plans",
+  "title": "Student Dining Plans Index",
+  "text": "Student Dining Plans Index Page.\nColumbia Dining offers a variety of plans:\n- First-Year Plans: Plan 1 (19 meals/week + $75 Dining Dollars), Plan 2 (350 meals/term + $150 Dining Dollars).\n- Upperclass & Commuter Plans: Block 100, Block 150, and commuter packages.\n- Graduate Plans: Grad Plan 1 (25 meals + $100 Flex), Grad Plan 2 (50 meals + $150 Flex), Grad Plan 3 (75 meals + $200 Flex).\nStandard locations: John Jay, Ferris Booth Commons, JJ's Place, Chef Mike's Sub Shop, Chef Don's Pizza Pi, Fac Shack, Faculty House, Grace Dodge Dining Hall, Johnny's Food Truck, Blue Java Cafés.",
+  "metadata": {
+    "type": "official",
+    "doc_type": "plans",
+    "audience": "mixed",
+    "priority": 2,
+    "school": "Columbia University",
+    "campus": "Morningside Heights"
+  }
+}

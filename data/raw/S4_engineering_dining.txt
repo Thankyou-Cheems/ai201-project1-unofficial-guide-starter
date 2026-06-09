@@ -1,0 +1,7 @@
+Dining Options for Columbia Engineering Students.
+For students spending their days in classes or research labs near the Seeley W. Mudd Building (SEAS), several convenient dining options are available:
+1. Blue Java Café in Mudd: Located on the 3rd floor (lobby) of Mudd. Offers Starbucks coffee, espresso drinks, tea, pastries, sandwiches, and grab-and-go salads. Extremely popular between classes.
+2. Chef Mike's Sub Shop: Located in Uris Hall. Offers premium custom sub sandwiches, chips, and drinks. A short 2-minute walk from Mudd.
+3. Chef Don's Pizza Pi: Located in Mudd Hall (lower level). Features freshly made personal pizzas, salads, and sodas.
+4. Fac Shack: Located outside Mudd/Uris. A food truck style option offering quick grilled items.
+5. Faculty House: Located East of campus (near President's Lawn). Offers buffet-style lunch for dining plan swipes (Monday-Friday).
